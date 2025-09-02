@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile: D'Von Patterson</title>
+
+  <style>
+    :root{
+      --bg:#c7c9ca;   /* your light gray */
+      --ink:#0f0f0f;
+      --card:#ffffff;
+      --accent:#511685; /* your purple from earlier work */
+      --max:900px;
+      --radius:14px;
+    }
+    /* Reset-ish */
+    html,body{margin:0}
+    body{
+      font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.6;
+    }
+    .wrap{
+      max-width:var(--max);
+      margin:auto;
+      padding:20px;
+    }
+    header{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin:6px 0 14px;
+    }
+    header h1{margin:0;font-size:2rem;line-height:1.1}
+    .badge{
+      padding:6px 10px;
+      background:var(--accent);
+      color:#fff;
+      border-radius:999px;
+      font-size:.9rem;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:0 8px 24px rgba(0,0,0,.06);
+      margin:14px 0;
+    }
+    .grid{
+      display:grid;
+      gap:14px;
+    }
+    @media (min-width:720px){
+      .grid{grid-template-columns:1fr 1fr}
+    }
+    figure{margin:0}
+    img{
+      width:100%;
+      height:auto;
+      border-radius:12px;
+      display:block;
+    }
+    figcaption{
+      font-size:.9rem;
+      color:#555;
+      margin-top:6px;
+    }
+    h2{margin:.25rem 0 .5rem}
+    ul{padding-left:1.1rem;margin:.25rem 0}
+    audio{width:100%}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    footer{
+      text-align:center;
+      color:#555;
+      font-size:.9rem;
+      padding:22px 0 8px;
+    }
+    .links a{
+      display:inline-block;
+      background:#fff;
+      color:#111;
+      padding:8px 12px;
+      border-radius:10px;
+      margin-right:10px;
+      margin-top:6px;
+      box-shadow:0 4px 12px rgba(0,0,0,.06);
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <span class="badge">Seattle, WA</span>
+      <h1>My Profile: D'Von Patterson</h1>
+    </header>
+
+    <!-- Photos -->
+    <section class="card">
+      <h2>My Profile Photo and Hobby</h2>
+      <div class="grid">
+        <figure>
+          <!-- ensure the folder name matches exactly: images/ vs Images/ -->
+          <img src="images/mypic.png" alt="D'Von Patterson profile photo">
+          <figcaption>Hi! I’m D’Von — investor, creator, GoGetter.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/hobby.png" alt="My hobby photo">
+          <figcaption>One of my favorite hobbies.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="card">
+      <h2>About Me</h2>
+      <ul>
+        <li>I live in Seattle, Washington.</li>
+        <li>I’m passionate about investing and self-improvement.</li>
+        <li>One of my goals is to build generational wealth.</li>
+        <li>My favorite hobby is playing basketball.</li>
+      </ul>
+    </section>
+
+    <!-- Interests -->
+    <section class="card">
+      <h2>My Interests</h2>
+      <ul>
+        <li>Stock market investing</li>
+        <li>Artificial Intelligence</li>
+        <li>Helping others grow</li>
+      </ul>
+    </section>
+
+    <!-- Audio -->
+    <section class="card">
+      <h2>My Favorite Audio</h2>
+      <!-- fixed: <source> tag spelling + file extension -->
+      <audio controls>
+        <source src="mp3s/fav-audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+        Listen here instead:
+        <a href="https://pixabay.com/music/beats-good-night-lofi-cozy-chill-music-160166/" target="_blank" rel="noopener">Good Night – Lofi</a>.
+      </audio>
+    </section>
+
+    <!-- Links -->
+    <section class="card">
+      <h2>Find Me Online</h2>
+      <p class="links">
+        <a href="https://www.instagram.com/officialgogetter_" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/in/dvon-patterson-04240334b/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:youremail@example.com">Email Me</a>
+      </p>
+    </section>
+
+    <footer>
+      <small>Built with HTML + a pinch of CSS. © D’Von Patterson</small>
+    </footer>
+  </main>
+</body>
+</html>

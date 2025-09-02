@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>CSS Practice: CSS Corner Cafe</title>
+  <style>
+    /* Base styles */
+    body {
+      font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1 {
+      text-align: center;
+      background: #4b2e83;   /* deep purple header */
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+      font-size: 2rem;
+    }
+
+    section {
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #4b2e83;
+    }
+
+    /* Table styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background: #eee;
+      font-weight: 600;
+    }
+
+    /* Form styles */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input[type="text"],
+    input[type="range"],
+    input[type="submit"] {
+      font: inherit;
+      padding: 10px;
+    }
+    input[type="text"] {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="submit"] {
+      background: #4b2e83;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    input[type="submit"]:hover {
+      background: #362160;
+    }
+
+    /* Contact */
+    a {
+      color: #4b2e83;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    address {
+      font-style: normal;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS Corner Cafe</h1>
+  <section>
+    <h2>Menu</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Cost</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Coffee</td><td>$2</td></tr>
+        <tr><td>Tea</td><td>$1.50</td></tr>
+        <tr><td>Chicken & Waffles</td><td>$12</td></tr>
+        <tr><td>Blueberry Pancakes</td><td>$6</td></tr>
+      </tbody>
+    </table>
+  </section>
+  <section>
+    <h2>Submit Your Review</h2>
+    <form action="https://us-central1-nucamp-production.cloudfunctions.net/post/formdata" method="post">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" />
+      <label for="rating">Your Rating:</label>
+      1 <input type="range" id="rating" name="rating" min="1" max="5" /> 5
+      <input type="submit" id="submit-btn" value="Submit Review"/>
+    </form>
+  </section>
+  <section>
+    <h2>Contact</h2>
+    <p>Call us at: <a href="tel:+15555551212">1-555-555-1212</a></p>
+    <address>
+      CSS Corner Cafe<br />
+      101 W Main St<br />
+      Bellevue, WA 98004
+    </address>
+  </section>
+</body>
+</html>

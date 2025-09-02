@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My first CSS steps</title>
+    <style>
+        h1 {
+            color: orange;
+        }
+        .wlm-msg {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10pt;
+            color: red;
+        }
+        
+    </style>
+    </head>
+    <body>
+        <h1 class="wlm-msg">Web Fundementals</h1>
+        <!--lowest specificity of 10 point-->
+    <h1 style="color:blue;">Here we have another heading</h1>
+    <h1>This is my family and their very important to me</h1>
+    <h1 id="my-family" style="color:green;">This is my family and their very important to me</h1>
+
+    </body>
+</html>
+  
+
+echo "# 1-Web-Dev-Fundamentals" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/gogetterscertified-wq/1-Web-Dev-Fundamentals.git
+git push -u origin main

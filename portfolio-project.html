@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome To Full Circle Wealth</title>
+  <link rel="stylesheet" href="Survey.css"/>
+  <style>
+    :root {
+      --bg:  #511685;        /* your purple */
+      --ink: #0e0e0e;
+      --card: #ffffff;
+      --max: 960px;
+    }
+    html, body { margin:0; font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; }
+    body { background: var(--bg); color: var(--ink); }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 24px; }
+    header { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
+    .logo { width: 96px; height: auto; border-radius: 10px; }
+    h1 { margin: 0; font-size: 2.2rem; line-height: 1.1; }
+    h2 { margin: 16px 0 8px; }
+    /* Responsive YouTube (16:9) */
+    .video { position: relative; width: 100%; max-width: 720px; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,.25); background:#000; }
+    .video::before { content:""; display:block; padding-top:56.25%; }
+    .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+    p { max-width: 720px; }
+    .btn {
+      display:inline-block; margin-top:10px; background:#fff; color:#111;
+      text-decoration:none; padding:10px 14px; border-radius:10px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <!-- Be sure the path + case matches your folder name -->
+      <img class="logo" src="Images/logo.png" alt="Full Circle Wealth Logo">
+      <h1 class="vault-title">Full Circle Wealth Vault</h1>
+
+    </header>
+    <p>Welcome to the Full Circle Wealth Vault! Here you'll find exclusive content, resources, and insights to help you on your financial journey. Whether you're looking for investment tips, budgeting advice, or wealth-building strategies, we've got you covered.</p>
+    <h2>Check out our YouTube channel below!</h2>
+    <div class="video">
+      <iframe
+        src="https://www.youtube.com/embed/h7B1bm5d8qw?si=sVgWTIz5k9hReO4f"
+        title="Full Circle Wealth - Latest Video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <p>
+      New here? Watch the latest upload and subscribe for more.
+      <a class="btn" href="https://www.youtube.com/@FullCircleWealth" target="_blank" rel="noopener">Visit Channel</a>
+    </p>
+  </main>
+  <input type="submit" id="submit-btn" />
+   <form action="https://formspree.io/f/abcdxyz1" method="post">
+    <!-- Name -->
+    <label for="name">Full Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+    
+    <!-- Email -->
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+    
+    <!-- Message -->
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="4" cols="40" required></textarea><br><br>
+    
+    <!-- Radio Buttons -->
+    <p>How did you hear about us?</p>
+    <input type="radio" id="instagram" name="referral" value="Instagram">
+    <label for="instagram">Instagram</label><br>
+    
+    <input type="radio" id="linkedin" name="referral" value="LinkedIn">
+    <label for="linkedin">LinkedIn</label><br>
+    
+    <input type="radio" id="friend" name="referral" value="Friend">
+    <label for="friend">Friend</label><br><br>
+    
+    <!-- Submit -->
+    <input type="submit" id="submit-btn" value="Send Message">
+  </form>
+</body>
+</html>
+
+
