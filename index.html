@@ -174,6 +174,62 @@ body.light {
     #personal:target, #investing:target{display:block}
     /* Default to Personal when no hash in URL */
     #personal:not(:target):not(.force-hide){display:block}
+    /* 📱 Mobile-friendly adjustments */
+@media (max-width: 768px) {
+  /* Stack grid layouts into one column */
+  .grid,
+  .grid-2,
+  .kanban {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Cards: tighter spacing */
+  .card {
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+
+  /* Typography adjustments */
+  h1 {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+
+  /* Tables: scrollable on small screens */
+  table {
+    font-size: 12px;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  /* Mood tracker & quick links stack better */
+  .moods {
+    flex-wrap: wrap;
+  }
+  .links {
+    flex-direction: column;
+  }
+}
+
+/* Fix for Top 3 priorities on mobile */
+@media (max-width: 768px) {
+  .pri-item {
+    flex-wrap: wrap;
+    align-items: flex-start;  /* aligns checkbox + text cleanly */
+  }
+
+  .pri-item span {
+    flex: 1;                 /* text takes full width next to checkbox */
+    font-size: 14px;          /* smaller font for phones */
+    margin-top: 4px;
+  }
+}
   </style>
 </head>
 <body>
