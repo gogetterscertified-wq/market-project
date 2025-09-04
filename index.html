@@ -191,6 +191,25 @@ body.light {
     #personal:target, #investing:target{display:block}
     /* Default to Personal when no hash in URL */
     #personal:not(:target):not(.force-hide){display:block}
+  /* Mobile fix: stack columns */
+@media (max-width: 768px) {
+  .grid,
+  .grid-2,
+  .kanban {
+    grid-template-columns: 1fr !important; /* single column */
+  }
+
+  .card {
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+}
   </style>
 </head>
 <body>
