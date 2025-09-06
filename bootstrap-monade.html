@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monade — Personal & Investing Dashboard</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    /* ====== Theme Variables ====== */
+    :root {
+      --bg:#392a64;
+      --panel:#121821;
+      --panel-2:#0f141c;
+      --text:#e6edf3;
+      --muted:#8b97a6;
+      --border:#1e2733;
+      --good:#13c28a;
+      --bad:#ff5b5b;
+      --accent:#4ea1ff;
+      --yellow:#f4d03f;
+    }
+    body.light {
+      --bg:#f9fafb;
+      --panel:#ffffff;
+      --panel-2:#f3f4f6;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --good:#059669;
+      --bad:#dc2626;
+      --accent:#2563eb;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-accent {
+      background: var(--accent);
+      color: #06111e;
+      font-weight: 600;
+    }
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="sticky-top bg-dark bg-opacity-75 border-bottom border-secondary">
+    <div class="container d-flex justify-content-between align-items-center py-2">
+      <div>
+        <h1 class="h5 mb-0">Monade Dashboard</h1>
+        <small class="text-muted">Minimal • Modern • Notion/Linear-inspired</small>
+      </div>
+      <div>
+        <span class="badge bg-secondary me-2">v1.0</span>
+        <button id="themeToggle" class="btn btn-outline btn-sm">☀️ / 🌙</button>
+      </div>
+    </div>
+    <nav class="container mt-2">
+      <a href="#personal" class="btn btn-outline me-2">Personal</a>
+      <a href="#investing" class="btn btn-outline">Investing</a>
+    </nav>
+  </header>
+
+  <!-- PERSONAL -->
+  <main id="personal" class="container my-4">
+    <div class="row g-3">
+      <!-- Top 3 -->
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h5>Deep Work</h5>
+          <p class="mb-0">90 min coding session</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h5>Investing Reel</h5>
+          <p class="mb-0">Record 1 reel today</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h5>Walk + Reflect</h5>
+          <p class="mb-0">30 min outdoors</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Journal -->
+    <div class="card p-3 mt-4">
+      <h5>Quick Journal</h5>
+      <label for="j-am" class="form-label">AM Intention</label>
+      <textarea id="j-am" class="form-control mb-3"></textarea>
+      <label for="j-pm" class="form-label">PM Reflection</label>
+      <textarea id="j-pm" class="form-control"></textarea>
+    </div>
+  </main>
+
+  <!-- INVESTING -->
+  <main id="investing" class="container my-4 d-none">
+    <div class="row g-3">
+      <div class="col-md-3"><div class="card p-3"><h5>Total Equity</h5><p>$12,560</p></div></div>
+      <div class="col-md-3"><div class="card p-3"><h5>Cash</h5><p>$1,040</p></div></div>
+      <div class="col-md-3"><div class="card p-3"><h5>Today P/L</h5><p>+$180</p></div></div>
+      <div class="col-md-3"><div class="card p-3"><h5>YTD P/L</h5><p>+18%</p></div></div>
+    </div>
+    <div class="card p-3 mt-4">
+      <h5>Watchlist</h5>
+      <table class="table table-dark table-hover table-sm">
+        <thead>
+          <tr><th>Ticker</th><th>Price</th><th>Change</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>AAPL</td><td>$190</td><td class="text-success">+0.8%</td><td>AI rollout</td></tr>
+          <tr><td>NVDA</td><td>$122</td><td class="text-danger">-1.2%</td><td>Watch 120</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Theme Toggle -->
+  <script>
+    (function(){
+      const key = "monade-theme";
+      const body = document.body;
+      const toggle = document.getElementById("themeToggle");
+
+      if(localStorage.getItem(key)==="light") {
+        body.classList.add("light");
+      }
+      toggle.addEventListener("click", () => {
+        body.classList.toggle("light");
+        localStorage.setItem(key, body.classList.contains("light") ? "light" : "dark");
+      });
+    })();
+  </script>
+</body>
+</html>
