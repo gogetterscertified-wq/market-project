@@ -6,6 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Monade — Personal & Investing Dashboard</title>
   <style>
+  /* Phones and small screens (≤ 600px wide) */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .card {
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+
+  table {
+    font-size: 12px;
+    display: block;
+    overflow-x: auto; /* lets you scroll wide tables */
+  }
+}
     /*
       Notion/Linear-inspired styling
       - Minimal, airy, hairline borders, gentle radius       
@@ -174,62 +191,6 @@ body.light {
     #personal:target, #investing:target{display:block}
     /* Default to Personal when no hash in URL */
     #personal:not(:target):not(.force-hide){display:block}
-    /* 📱 Mobile-friendly adjustments */
-@media (max-width: 768px) {
-  /* Stack grid layouts into one column */
-  .grid,
-  .grid-2,
-  .kanban {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* Cards: tighter spacing */
-  .card {
-    padding: 12px;
-    margin-bottom: 16px;
-  }
-
-  /* Typography adjustments */
-  h1 {
-    font-size: 20px;
-  }
-  h2 {
-    font-size: 18px;
-  }
-  h3 {
-    font-size: 16px;
-  }
-
-  /* Tables: scrollable on small screens */
-  table {
-    font-size: 12px;
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
-  /* Mood tracker & quick links stack better */
-  .moods {
-    flex-wrap: wrap;
-  }
-  .links {
-    flex-direction: column;
-  }
-}
-
-/* Fix for Top 3 priorities on mobile */
-@media (max-width: 768px) {
-  .pri-item {
-    flex-wrap: wrap;
-    align-items: flex-start;  /* aligns checkbox + text cleanly */
-  }
-
-  .pri-item span {
-    flex: 1;                 /* text takes full width next to checkbox */
-    font-size: 14px;          /* smaller font for phones */
-    margin-top: 4px;
-  }
-}
   </style>
 </head>
 <body>
@@ -253,34 +214,36 @@ body.light {
   <!-- =================== PERSONAL =================== -->
   <main id="personal" class="wrap page">
     <section class="grid">
-      <div class="col">
-        <div class="card">
-          <h3>Today's Top 3</h3>
-          <div class="pri-list">
-            <label class="pri-item"><input type="checkbox"> <span>Deep work: 90 min coding session</span></label>
-            <label class="pri-item"><input type="checkbox"> <span>Record 1 investing reel</span></label>
-            <label class="pri-item"><input type="checkbox"> <span>30‑min walk + reflect</span></label>
-          </div>
+ <div class="container mt-4">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Deep Work</h5>
+          <p class="card-text">90 min coding session</p>
         </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Investing Reel</h5>
+          <p class="card-text">Record 1 reel today</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Walk + Reflect</h5>
+          <p class="card-text">30 min outdoors</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-        <div class="card">
-          <h3>Tasks (Kanban)</h3>
-          <div class="kanban">
-            <div class="lane">
-              <p class="col-h">To Do</p>
-              <div class="task"><strong>Write personal dashboard CSS</strong><br><span class="sub">layout + cards</span></div>
-              <div class="task"><strong>Outline journal prompts</strong><br><span class="sub">AM/PM reflections</span></div>
-            </div>
-            <div class="lane">
-              <p class="col-h">In Progress</p>
-              <div class="task"><strong>Create habit tracker grid</strong><br><span class="tag">UI</span></div>
-            </div>
-            <div class="lane">
-              <p class="col-h">Done</p>
-              <div class="task"><strong>Header + theme</strong><br><span class="sub">sticky header, chip</span></div>
-            </div>
-          </div>
-        </div>
+       
 
         <div class="card">
           <h3>Quick Journal</h3>
